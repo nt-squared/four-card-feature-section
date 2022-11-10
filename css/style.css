@@ -1,0 +1,152 @@
+:root {
+    --clr-red: hsl(0, 78%, 62%);
+    --clr-cyan: hsl(180, 62%, 55%);
+    --clr-orange: hsl(34, 97%, 64%);
+    --clr-blue: hsl(212, 86%, 64%);
+
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+
+    --font-size: 15px;
+    --font-family: 'Poppins', sans-serif;
+    --fw-200: 200;
+    --fw-400: 400;
+    --fw-600: 600;
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--Very-Light-Gray);
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+}
+
+main {
+    margin: 1.125rem;
+    text-align: center;
+    transition: all 700ms;
+}
+
+main .card-header {
+    max-width: 500px;
+    margin-inline: auto;
+    margin-block-end: 4rem;
+}
+
+.card-header h1 {
+    font-size: clamp(1.50rem, calc(0.88rem + 2.67vw), 1.875rem);
+    line-height: 1.25;
+    color: var(--Very-Dark-Blue);
+    font-weight: var(--fw-200);
+}
+
+.card-header h2 {
+    font-size: clamp(1.50rem, calc(0.88rem + 2.67vw), 1.875rem);
+    line-height: 1.25;
+    color: var(--Very-Dark-Blue);
+    font-weight: var(--fw-600);
+    margin-block-end: 1rem;
+}
+
+.card-header p {
+    color: var(--Grayish-Blue);
+    font-weight: var(--fw-400);
+    line-height: 1.5;
+}
+
+.card-body {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
+    transition: all 700ms;
+}
+
+.card {
+    width: min(100%, 375px);
+    min-height: 22vh;
+    display: grid;
+    grid-template-rows: repeat(2, auto) 1fr;
+    grid-gap: 0.5rem;
+    padding: 1.2em;
+    text-align: start;
+    border-radius: 5px;
+    overflow: hidden;
+    border-top: 3px solid currentColor;
+    box-shadow: 0 7px 10px 2px hsla(234, 12%, 34%, 0.2);
+    transition: all 700ms;
+}
+
+.card:nth-child(1) {
+    border-top: 3px solid var(--clr-cyan);
+}
+
+.card:nth-child(2) {
+    border-top: 3px solid var(--clr-red);
+}
+
+.card:nth-child(3) {
+    border-top: 3px solid var(--clr-orange);
+}
+
+.card:nth-child(4) {
+    border-top: 3px solid var(--clr-blue);
+}
+
+.card h3 {
+    font-size: clamp(1.125rem, calc(0.50rem + 2.67vw), 1.50rem);
+    color: var(--Very-Dark-Blue);
+    font-weight: var(--fw-600);
+}
+
+.card p {
+    color: var(--Grayish-Blue);
+    font-weight: var(--fw-400);
+}
+
+.card img {
+    display: inline-block;
+    margin-top: auto;
+    justify-self: end;
+    transition: all 700ms;
+}
+
+@media (min-width: 768px) {
+    .card-header h2 {
+        margin-block-end: 1.5rem;
+    }
+
+    .card-body {
+        max-width: 1180px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+        min-height: 25vh;
+        padding: 1.6em;
+    }
+
+    .card:nth-child(1) {
+        grid-column: 1 / 2;
+    }
+
+    .card:nth-child(4) {
+        grid-column: 3 / -1;
+    }
+    
+    .card:nth-child(2),
+    .card:nth-child(3) {
+        grid-column: 2 / 3;
+    }
+    
+    .card:nth-child(1),
+    .card:nth-child(4) {
+        grid-row: 1 / span 2;
+        align-self: center;
+    }
+}
