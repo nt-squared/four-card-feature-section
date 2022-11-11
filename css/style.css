@@ -32,28 +32,28 @@ main {
     transition: all 700ms;
 }
 
-main .card-header {
+main header {
     max-width: 500px;
     margin-inline: auto;
     margin-block-end: 4rem;
 }
 
-.card-header h1 {
+header h1 {
     font-size: clamp(1.50rem, calc(0.88rem + 2.67vw), 1.875rem);
     line-height: 1.25;
     color: var(--Very-Dark-Blue);
     font-weight: var(--fw-200);
+    margin-block-end: 1rem;
 }
 
-.card-header h2 {
+header h1 span {
     font-size: clamp(1.50rem, calc(0.88rem + 2.67vw), 1.875rem);
     line-height: 1.25;
     color: var(--Very-Dark-Blue);
     font-weight: var(--fw-600);
-    margin-block-end: 1rem;
 }
 
-.card-header p {
+header p {
     color: var(--Grayish-Blue);
     font-weight: var(--fw-400);
     line-height: 1.5;
@@ -75,31 +75,31 @@ main .card-header {
     grid-gap: 0.5rem;
     padding: 1.2em;
     text-align: start;
-    border-radius: 5px;
+    border-radius: 4px 4px 5px 5px;
     overflow: hidden;
     background-color: white;
-    border-top: 3px solid currentColor;
+    border-top: 4px solid currentColor;
     box-shadow: 0 7px 10px 2px hsla(234, 12%, 34%, 0.2);
     transition: all 700ms;
 }
 
 .card:nth-child(1) {
-    border-top: 3px solid var(--clr-cyan);
+    border-top-color: var(--clr-cyan);
 }
 
 .card:nth-child(2) {
-    border-top: 3px solid var(--clr-red);
+    border-top-color: var(--clr-red);
 }
 
 .card:nth-child(3) {
-    border-top: 3px solid var(--clr-orange);
+    border-top-color: var(--clr-orange);
 }
 
 .card:nth-child(4) {
-    border-top: 3px solid var(--clr-blue);
+    border-top-color: var(--clr-blue);
 }
 
-.card h3 {
+.card h2 {
     font-size: clamp(1.125rem, calc(0.50rem + 2.67vw), 1.50rem);
     color: var(--Very-Dark-Blue);
     font-weight: var(--fw-600);
@@ -118,7 +118,7 @@ main .card-header {
 }
 
 @media (min-width: 768px) {
-    .card-header h2 {
+    header h1 span {
         margin-block-end: 1.5rem;
     }
 
